@@ -1,0 +1,8 @@
+<h1>議事録</h1>
+<ul>
+  <% @minutes.each do |minute| %>
+    <li> <%= link_to minute.title, minute %></li>
+  <% end %>
+</ul>
+
+<%= link_to "新規投稿", new_minute_path, class: "btn btn-primary" %>
