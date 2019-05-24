@@ -1,16 +1,16 @@
 <div class="col-md-10 offset-md-1 mt-5">
   <h2><%= @minute.title %></h2>
   <ul>
-    <li><b>投稿者: </b><%= @minute.name %>円</li>
-    <li><b>投稿日: </b><%= @minute.post_date %></li>
+    <li><b><%= t ".name" %>:  </b><%= @minute.name %></li>
+    <li><b><%= t ".post_date" %>:  </b><%= @minute.post_date %></li>
   </ul>
   <hr>
-  <h4>詳細</h4>
+  <h5><%= t ".description" %></h5>
   <%= simple_format @minute.description %>
 
-<%= link_to "編集", edit_minute_path(@minute), class: "btn btn-primary" %>
-<%= button_tag "削除", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-minute" } %>
-<%= link_to "戻る", minutes_path, class: "btn btn-secondary" %>
+<%= link_to t(".edit"), edit_minute_path(@minute), class: "btn btn-primary" %>
+<%= button_tag t(".delete"), class: "btn btn-warning", data: { toggle: "modal", target: "#delete-minute" } %>
+<%= link_to t(".return"), minutes_path, class: "btn btn-secondary" %>
 </div>
 
 <div class="modal fade" id="delete-minute">
