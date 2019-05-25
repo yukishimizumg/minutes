@@ -1,8 +1,11 @@
-<h1>議事録</h1>
-<ul>
+<div align = "center">
+<h1 class="p-3 mb-2 bg-warning text-dark">議事録</h1>
+<ul style="list-style: none;">
   <% @minutes.each do |minute| %>
     <li> <%= link_to minute.title, minute %></li>
   <% end %>
 </ul>
 
+<div class="mt-5">
 <%= link_to "新規投稿", new_minute_path, class: "btn btn-primary" %>
+</div>
